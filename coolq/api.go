@@ -503,6 +503,7 @@ func (bot *CQBot) CQGetGroupMemberInfo(groupID, userID int64, noCache bool) glob
 		}
 	} else {
 		member = group.FindMember(userID)
+		log.Infof(member)
 	}
 	if member == nil {
 		return Failed(100, "MEMBER_NOT_FOUND", "群员不存在")
